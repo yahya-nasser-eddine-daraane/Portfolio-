@@ -1,6 +1,6 @@
 export const site = {
   name: "Youssef BENMOUSSA",
-  headline: "Third-Year Engineering Student | AI & Backend (Python/Laravel)",
+  headline: "Third-Year Engineering Student | AI & Backend",
   about:
     "Third-year Computer Engineering & Networks student focused on AI and backend development. I build practical systems combining REST APIs, data processing, and NLP/RAG pipelines (embeddings + semantic search + reranking) to deliver reliable, production-minded solutions. Currently seeking an internship starting July 2026.",
   heroChips: ["Python", "FastAPI", "Laravel", "RAG", "ChromaDB", "MySQL", "Git/Linux"],
@@ -23,6 +23,11 @@ export const education = [
     title: "Preparatory Classes for Engineering Studies",
     school: "École Marocaine des Sciences de l'Ingénieur (EMSI)",
     period: "2023 — 2025",
+  },
+  {
+    title: "Faculté des Sciences et Techniques de Marrakech",
+    school: "Math, Informatique, Physique et Chimie (MIPC)",
+    period: "2023 — 2024",
   },
   {
     title: "Baccalauréat Science Physique",
@@ -59,7 +64,7 @@ export const skillCategories = [
   },
   {
     title: "Databases",
-    skills: ["MySQL", "ChromaDB", "SQLite (optional)"],
+    skills: ["MySQL", "ChromaDB", "SQLite , SQL Server"],
   },
   {
     title: "Tools & Systems",
@@ -86,7 +91,7 @@ export const projects = [
       "Secure password manager in C++ with local encryption (AES-256) and controlled access, designed with a clean desktop interface and structured storage.",
     stack: ["C++", "Qt", "SQLCipher", "Security"],
     image: "/projects/project-2.png",
-    github: "#",
+    github: "https://github.com/BENMOUSSA-Youssef",
     live: "",
     highlight: "Secure local encryption project",
   },
@@ -97,7 +102,7 @@ export const projects = [
       "NLP classifier that categorizes documents (e.g., contracts, regulations). Includes preprocessing, TF-IDF vectorization, model training (Logistic Regression / SVM), and evaluation (accuracy, F1-score).",
     stack: ["Python", "Scikit-learn", "NLP", "TF-IDF"],
     image: "/projects/project-3.png",
-    github: "#",
+    github: "https://github.com/BENMOUSSA-Youssef",
     live: "",
     highlight: "ML classification + metrics",
   },
@@ -108,7 +113,7 @@ export const projects = [
       "Academic platform built with Laravel featuring role-based access, secure authentication, and automated grade calculations with a clean admin experience.",
     stack: ["Laravel", "PHP", "MySQL", "Blade"],
     image: "/projects/project-4.png",
-    github: "#",
+    github: "https://github.com/BENMOUSSA-Youssef",
     live: "",
     highlight: "Full-stack Laravel platform",
   },
@@ -143,7 +148,7 @@ export const contact = {
   phone: "+212 665-449333",
   github: "BENMOUSSA-Youssef",
   githubUrl: "https://github.com/BENMOUSSA-Youssef",
-  linkedInUrl: "https://linkedin.com/in/youssef-benmoussa",
+  linkedInUrl: "https://www.linkedin.com/in/youssefbenmoussa/",
 } as const;
 
 export const navSections = [
