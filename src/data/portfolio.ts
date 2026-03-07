@@ -1,8 +1,8 @@
 export const site = {
   name: "Youssef BENMOUSSA",
-  headline: "Third-Year Engineering Student | AI & Backend",
+  headline: "Third-Year Engineering Student | AI & Software Engineering",
   about:
-    "Third-year Computer Engineering & Networks student focused on AI and backend development. I build practical systems combining REST APIs, data processing, and NLP/RAG pipelines (embeddings + semantic search + reranking) to deliver reliable, production-minded solutions. Currently seeking an internship starting July 2026.",
+    "Third-year Computer Engineering & Networks student interested in artificial intelligence and software development. I build practical projects involving NLP, semantic search, and API-based systems. Currently seeking a software or AI internship starting July 2026.",
   heroChips: ["Python", "FastAPI", "Laravel", "RAG", "ChromaDB", "MySQL", "Git/Linux"],
   statusBadge: "Open for Internship — July 2026",
 } as const;
@@ -10,7 +10,7 @@ export const site = {
 export const aboutFacts = [
   { label: "Location", value: "Morocco" },
   { label: "Availability", value: "Internship July 2026" },
-  { label: "Focus", value: "AI systems + Backend APIs" },
+  { label: "Focus", value: "Artificial Intelligence • Software Development" },
 ] as const;
 
 export const education = [
@@ -79,7 +79,7 @@ export const projects = [
     description:
       "Legal assistant built with a full RAG pipeline: chunking legal texts, generating embeddings, semantic retrieval in ChromaDB, and reranking with Bi-Encoder/Cross-Encoder before producing contextual answers via an LLM.",
     stack: ["Python", "FastAPI", "ChromaDB", "sentence-transformers", "RAG", "NLP"],
-    image: "/projects/project-1.png",
+    image: "/projects/project-1.webp",
     github: "https://github.com/BENMOUSSA-Youssef",
     live: "",
     highlight: "RAG pipeline (retrieval + reranking)",
@@ -101,7 +101,7 @@ export const projects = [
     description:
       "NLP classifier that categorizes documents (e.g., contracts, regulations). Includes preprocessing, TF-IDF vectorization, model training (Logistic Regression / SVM), and evaluation (accuracy, F1-score).",
     stack: ["Python", "Scikit-learn", "NLP", "TF-IDF"],
-    image: "/projects/project-3.png",
+    image: "/projects/project-3.webp",
     github: "https://github.com/BENMOUSSA-Youssef",
     live: "",
     highlight: "ML classification + metrics",
@@ -112,7 +112,7 @@ export const projects = [
     description:
       "Academic platform built with Laravel featuring role-based access, secure authentication, and automated grade calculations with a clean admin experience.",
     stack: ["Laravel", "PHP", "MySQL", "Blade"],
-    image: "/projects/project-4.png",
+    image: "/projects/project-4.jpg",
     github: "https://github.com/BENMOUSSA-Youssef",
     live: "",
     highlight: "Full-stack Laravel platform",

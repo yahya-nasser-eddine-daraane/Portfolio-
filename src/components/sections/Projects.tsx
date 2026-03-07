@@ -15,7 +15,7 @@ export default function Projects() {
   return (
     <section id="projects" className="scroll-mt-20 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionTitle title="Projects" subtitle="Selected work" />
+        <SectionTitle title="Featured Projects" subtitle="A selection of my technical projects" />
         <div className="grid gap-8 sm:grid-cols-2">
           {projects.map((p, i) => (
             <ProjectCard

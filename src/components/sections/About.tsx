@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { aboutFacts } from "@/data/portfolio";
 
 const aboutParagraph =
-  "I enjoy building real projects that solve concrete problems. My focus is on AI and backend development: designing clean architectures, optimizing performance, and applying security basics. I care about code quality, maintainability, and delivering production-ready solutions.";
+  "I enjoy building real projects that combine software engineering and AI. My work focuses on designing clear system architectures, working with data and APIs, and developing practical applications such as NLP systems and web platforms. I’m motivated by learning new technologies and improving my engineering skills through hands-on projects.";
 
 export default function About() {
   return (
