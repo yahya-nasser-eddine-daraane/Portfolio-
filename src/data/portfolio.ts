@@ -15,26 +15,37 @@ export const aboutFacts = [
 
 export const education = [
   {
-    title: "Engineering Cycle – Computer Engineering & Networks",
     school: "École Marocaine des Sciences de l'Ingénieur (EMSI)",
-    period: "2025 — PRESENT",
+    entries: [
+      {
+        title: "Engineering Cycle – Computer Engineering & Networks",
+        period: "2025 — Present",
+      },
+      {
+        title: "Preparatory Classes for Engineering Studies",
+        period: "2023 — 2025",
+      },
+    ],
   },
   {
-    title: "Preparatory Classes for Engineering Studies",
-    school: "École Marocaine des Sciences de l'Ingénieur (EMSI)",
-    period: "2023 — 2025",
+    school: "Faculté des Sciences et Techniques de Marrakech",
+    entries: [
+      {
+        title: "Math, Informatique, Physique et Chimie (MIPC)",
+        period: "2023 — 2024",
+      },
+    ],
   },
   {
-    title: "Faculté des Sciences et Techniques de Marrakech",
-    school: "Math, Informatique, Physique et Chimie (MIPC)",
-    period: "2023 — 2024",
-  },
-  {
-    title: "Baccalauréat Science Physique",
     school: "Rahali El Farouq High School",
-    period: "2021 — 2022",
+    entries: [
+      {
+        title: "Baccalauréat Science Physique",
+        period: "2021 — 2022",
+      },
+    ],
   },
-] as const;
+];
 
 export const skillCategories = [
   {
