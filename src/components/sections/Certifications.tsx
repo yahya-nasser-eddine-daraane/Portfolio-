@@ -1,43 +1,74 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { certifications } from "@/data/portfolio";
+
+const certificates = [
+  {
+    title: "Using Python to Access Web Data",
+    org: "University of Michigan",
+    image: "/certificates/michigan.png",
+    link: "#",
+  },
+  {
+    title: "The Unix Workbench",
+    org: "Johns Hopkins University",
+    image: "/certificates/johns-hopkins.jpeg",
+    link: "#",
+  },
+  {
+    title: "Introduction à la programmation orientée objet (C++)",
+    org: "EPFL",
+    image: "/certificates/EPFL.png",
+    link: "https://www.coursera.org/account/accomplishments/",
+  },
+];
 
 export default function Certifications() {
+  const items = [...certificates, ...certificates];
+
   return (
     <section id="certifications" className="scroll-mt-20 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionTitle title="Certifications" subtitle="Courses & credentials" />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {certifications.map((cert, i) => (
-            <motion.article
-              key={cert.title + cert.date}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.35, delay: i * 0.06 }}
-              className="flex flex-col rounded-xl border border-white/5 bg-surface-800/50 p-5 transition-colors hover:border-white/10"
-            >
-              <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                {cert.topic}
-              </span>
-              <h3 className="mt-2 font-semibold text-white">{cert.title}</h3>
-              <p className="mt-1 text-sm text-zinc-400">{cert.issuer}</p>
-              <p className="mt-1 text-xs text-zinc-500">{cert.date}</p>
+        <SectionTitle
+          title="Certifications"
+          subtitle="Courses & credentials"
+        />
+
+        <div className="relative mt-10 overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-black to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-black to-transparent" />
+
+          <div className="flex w-max animate-marquee gap-6">
+            {items.map((cert, i) => (
               <a
-                href={cert.url}
+                key={`${cert.title}-${i}`}
+                href={cert.link || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-zinc-300 transition-colors hover:text-white hover:underline"
-                aria-label={`View ${cert.title} certificate`}
+                className="group flex min-w-[420px] items-center gap-5 rounded-2xl border border-white/10 bg-surface-800/50 p-6 backdrop-blur transition-all duration-300 hover:border-white/20 hover:bg-surface-800/70"
               >
-                View certificate
-                <ExternalLink className="h-3.5 w-3.5" />
+                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-white">
+                  <Image
+                    src={cert.image}
+                    alt={cert.org}
+                    fill
+                    className="object-contain p-2"
+                    sizes="80px"
+                  />
+                </div>
+
+                <div className="min-w-0">
+                  <p className="text-sm uppercase tracking-[0.2em] text-zinc-400">
+                    {cert.org}
+                  </p>
+                  <h3 className="mt-2 line-clamp-2 text-xl font-semibold text-white transition-colors group-hover:text-zinc-100">
+                    {cert.title}
+                  </h3>
+                </div>
               </a>
-            </motion.article>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

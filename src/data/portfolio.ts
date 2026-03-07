@@ -75,7 +75,7 @@ export const skillCategories = [
   },
   {
     title: "Databases",
-    skills: ["MySQL", "ChromaDB", "SQLite" , "SQL Server"],
+    skills: ["MySQL", "Oracle", "SQLite" , "SQL Server"],
   },
   {
     title: "Tools & Systems",
@@ -136,21 +136,24 @@ export const certifications = [
     issuer: "University of Michigan (Coursera)",
     date: "Jan 27, 2026",
     topic: "Python",
-    url: "/certificates/Python.pdf",
+    link: "#",
+    image:"/certificates/michigan.png"
   },
   {
     title: "The Unix Workbench",
     issuer: "Johns Hopkins University (Coursera)",
     date: "Oct 24, 2025",
     topic: "Unix",
-    url: "/certificates/Unix.pdf",
+    link: "#",
+    image:"/certificates/Johns Hopkins.jpg"
   },
   {
     title: "Introduction à la programmation orientée objet (en C++)",
     issuer: "EPFL (Coursera)",
     date: "Nov 11, 2025",
     topic: "C++",
-    url: "/certificates/C++.pdf",
+    link: "#",
+    image:"/certificates/EPFL.jpg"
   },
 ] as const;
 
