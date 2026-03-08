@@ -11,13 +11,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Youssef BENMOUSSA | AI & Backend Developer",
+  title: "Youssef BENMOUSSA | AI & Software Engineering",
   description:
-    "Third-year Computer Engineering student focused on AI and backend development. REST APIs, RAG pipelines, NLP. Seeking internship July 2026.",
+    "Third-year Computer Engineering student focused on AI and software engineering. REST APIs, RAG pipelines, NLP. Seeking internship July 2026.",
   keywords: [
     "Youssef BENMOUSSA",
     "AI",
-    "Backend",
+    "Software Engineering",
     "Python",
     "Laravel",
     "RAG",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Youssef BENMOUSSA" }],
   openGraph: {
-    title: "Youssef BENMOUSSA | AI & Backend Developer",
+    title: "Youssef BENMOUSSA | AI & Software Engineering",
     description:
-      "Third-year Computer Engineering student. AI, backend, RAG, NLP. Seeking internship July 2026.",
+      "Third-year Computer Engineering student. AI, software engineering, RAG, NLP. Seeking internship July 2026.",
   },
 };
 

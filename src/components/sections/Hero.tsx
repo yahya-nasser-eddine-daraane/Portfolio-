@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Mail, User, X, Sparkles } from "lucide-react";
 import { site } from "@/data/portfolio";
+import { StarsBackground } from "@/components/ui/StarsBackground";
 
 const AI_QUOTES = [
   {
@@ -64,12 +65,15 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative pt-20 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20">
+    <section
+      id="hero"
+      className="relative pt-20 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20"
+    >
+      <StarsBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] via-transparent to-transparent" />
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-12">
-          {/* Text block */}
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -87,7 +91,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.4 }}
-              className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-5xl"           >
+              className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-5xl"
+            >
               {site.name}
             </motion.h1>
 
@@ -95,8 +100,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.4 }}
-              className="mt-3 max-w-2xl text-lg leading-snug text-zinc-300 sm:text-xl lg:text-2xl"         >
-              {site.headline}
+              className="mt-3 max-w-2xl text-lg font-medium leading-snug text-zinc-100 sm:text-xl lg:text-2xl"
+            >
+              AI & Software Engineering
             </motion.p>
 
             <motion.p
@@ -108,64 +114,63 @@ export default function Hero() {
               {site.about}
             </motion.p>
 
-<motion.div
-  initial={{ opacity: 0, y: 12 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.4, duration: 0.4 }}
-  className="mt-8"
->
-  {/* Mobile layout */}
-  <div className="grid grid-cols-2 gap-3 sm:hidden">
-    <Link
-      href="#projects"
-      className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black transition-opacity hover:opacity-90"
-      aria-label="View projects"
-    >
-      Projects
-      <ArrowRight className="h-4 w-4" />
-    </Link>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.4 }}
+              className="mt-8"
+            >
+              <div className="grid grid-cols-2 gap-3 sm:hidden">
+                <Link
+                  href="#projects"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+                  aria-label="View projects"
+                >
+                  Projects
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
 
-    <a
-      href="#contact"
-      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
-      aria-label="Contact"
-    >
-      <Mail className="h-4 w-4" />
-      Contact
-    </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                  aria-label="Contact"
+                >
+                  <Mail className="h-4 w-4" />
+                  Contact
+                </a>
 
-    <a
-      href="/CV.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="col-span-2 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
-      aria-label="View resume"
-    >
-      Resume
-    </a>
-  </div>
+                <a
+                  href="/CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="col-span-2 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                  aria-label="View resume"
+                >
+                  Resume
+                </a>
+              </div>
 
-  {/* Desktop layout */}
-  <div className="hidden sm:flex sm:flex-row sm:flex-wrap sm:gap-3">
-    <Link
-      href="#projects"
-      className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
-      aria-label="View projects"
-    >
-      View Projects
-      <ArrowRight className="h-4 w-4" />
-    </Link>
+              <div className="hidden sm:flex sm:flex-row sm:flex-wrap sm:gap-3">
+                <Link
+                  href="#projects"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
+                  aria-label="View projects"
+                >
+                  View Projects
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
 
-    <a
-      href="#contact"
-      className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/10"
-      aria-label="Contact"
-    >
-      <Mail className="h-4 w-4" />
-      Contact
-    </a>
-  </div>
-</motion.div>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/10"
+                  aria-label="Contact"
+                >
+                  <Mail className="h-4 w-4" />
+                  Contact
+                </a>
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -183,7 +188,6 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Image block */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -192,7 +196,7 @@ export default function Hero() {
           >
             <div
               ref={containerRef}
-              className="relative w-full max-w-[220px] aspect-square cursor-pointer select-none sm:max-w-[260px] lg:max-w-[320px] xl:max-w-[360px]"
+              className="relative aspect-square w-full max-w-[220px] cursor-pointer select-none sm:max-w-[260px] lg:max-w-[320px] xl:max-w-[360px]"
               style={{ perspective: "1000px" }}
               onMouseMove={(e) => handleMove(e.clientX, e.clientY)}
               onMouseLeave={handleLeave}
@@ -213,7 +217,12 @@ export default function Hero() {
             >
               <motion.div
                 className="relative h-full w-full overflow-hidden rounded-full"
-                style={{ transformStyle: "preserve-3d", perspective: 1000 }}
+                style={{
+                  transformStyle: "preserve-3d",
+                  perspective: 1000,
+                  WebkitBackfaceVisibility: "hidden",
+                  backfaceVisibility: "hidden"
+                }}
                 animate={{
                   rotateX: tilt.x,
                   rotateY: tilt.y,
@@ -221,18 +230,20 @@ export default function Hero() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 <div
-                  className="absolute -inset-1 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-40 blur-xl pointer-events-none"
+                  className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-40 blur-xl"
+                  style={{ transform: "translateZ(0)" }}
                   aria-hidden
                 />
-                <div className="absolute inset-0 rounded-full border-2 border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06),inset_0_1px_0_rgba(255,255,255,0.05)] pointer-events-none" />
-                <div className="absolute inset-0 rounded-full ring-2 ring-white/20 ring-offset-2 ring-offset-surface-900 pointer-events-none" />
+                <div className="pointer-events-none absolute inset-0 rounded-full border-2 border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06),inset_0_1px_0_rgba(255,255,255,0.05)]" />
+                <div className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-white/20 ring-offset-2 ring-offset-surface-900" />
 
                 {!profileImgError ? (
                   <Image
                     src="/profile.jpg"
                     alt="Youssef BENMOUSSA — click for a quote"
                     fill
-                    className="rounded-full object-cover object-[center_18%] pointer-events-none"
+                    quality={100}
+                    className="pointer-events-none rounded-full object-cover object-[center_18%]"
                     priority
                     sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 360px"
                     onError={() => setProfileImgError(true)}
