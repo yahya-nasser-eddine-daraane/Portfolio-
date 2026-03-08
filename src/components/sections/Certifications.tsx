@@ -46,15 +46,16 @@ export default function Certifications() {
                 href={cert.link || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex min-w-[420px] items-center gap-5 rounded-2xl border border-white/10 bg-surface-800/50 p-6 backdrop-blur transition-all duration-300 hover:border-white/20 hover:bg-surface-800/70"
+                className="group flex  min-w-[260px] sm:min-w-[340px] lg:min-w-[420px]items-center gap-5 rounded-2xl border border-white/10 bg-surface-800/50 p-4 sm:p-5 lg:p-6 backdrop-blur transition-all duration-300 hover:border-white/20 hover:bg-surface-800/70"
               >
-                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-white">
+                <div className="relative h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-white">
                   <Image
                     src={cert.image}
                     alt={cert.org}
                     fill
-                    className="object-contain p-2"
+                    className="object-contain "
                     sizes="80px"
+                    unoptimized
                   />
                 </div>
 
@@ -62,7 +63,7 @@ export default function Certifications() {
                   <p className="text-sm uppercase tracking-[0.2em] text-zinc-400">
                     {cert.org}
                   </p>
-                  <h3 className="mt-2 line-clamp-2 text-xl font-semibold text-white transition-colors group-hover:text-zinc-100">
+                  <h3 className="mt-2 line-clamp-2 text-base sm:text-lg lg:text-xl font-semibold text-white transition-colors group-hover:text-zinc-100">
                     {cert.title}
                   </h3>
                 </div>

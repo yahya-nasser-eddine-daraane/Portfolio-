@@ -1,6 +1,6 @@
 export const site = {
   name: "Youssef BENMOUSSA",
-  headline: "Third-Year Engineering Student | AI & Software Engineering",
+  headline: "AI & Software Engineering",
   about:
     "Third-year Computer Engineering & Networks student interested in artificial intelligence and software development. I build practical projects involving NLP, semantic search, and API-based systems. Currently seeking a software or AI internship starting July 2026.",
   heroChips: ["Python", "FastAPI", "Laravel", "RAG", "ChromaDB", "MySQL", "Git/Linux"],

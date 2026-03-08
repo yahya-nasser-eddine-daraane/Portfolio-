@@ -2,7 +2,15 @@
 
 import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Github, Linkedin, Copy, Check, Terminal } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  Github,
+  Linkedin,
+  Copy,
+  Check,
+  Terminal,
+} from "lucide-react";
 import { contact } from "@/data/portfolio";
 
 function CopyableChip({
@@ -19,6 +27,7 @@ function CopyableChip({
   ariaLabel: string;
 }) {
   const [copied, setCopied] = useState(false);
+
   const copy = useCallback(() => {
     navigator.clipboard.writeText(value);
     setCopied(true);
@@ -28,11 +37,16 @@ function CopyableChip({
   const content = (
     <>
       <Icon className="h-5 w-5 shrink-0 text-zinc-400" />
-      <span className="text-sm font-medium text-zinc-200">{label}</span>
+      <span className="min-w-0 truncate text-sm font-medium text-zinc-200">
+        {label}
+      </span>
       {copied ? (
         <Check className="h-4 w-4 shrink-0 text-white" aria-hidden />
       ) : (
-        <Copy className="h-4 w-4 shrink-0 text-zinc-500 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden />
+        <Copy
+          className="h-4 w-4 shrink-0 text-zinc-500 opacity-0 transition-opacity group-hover:opacity-100"
+          aria-hidden
+        />
       )}
     </>
   );
@@ -55,7 +69,7 @@ function CopyableChip({
     <button
       type="button"
       onClick={copy}
-        className="group flex w-full items-center gap-3 rounded-xl border border-white/10 bg-surface-800/60 px-4 py-3 text-left transition-all hover:border-white/20 hover:bg-surface-800/80"
+      className="group flex w-full items-center gap-3 rounded-xl border border-white/10 bg-surface-800/60 px-4 py-3 text-left transition-all hover:border-white/20 hover:bg-surface-800/80"
       aria-label={ariaLabel}
     >
       {content}
@@ -65,6 +79,7 @@ function CopyableChip({
 
 export default function Contact() {
   const [mainCopied, setMainCopied] = useState(false);
+
   const copyEmail = useCallback(() => {
     navigator.clipboard.writeText(contact.email);
     setMainCopied(true);
@@ -84,11 +99,13 @@ export default function Contact() {
             <Terminal className="h-3.5 w-3.5" aria-hidden />
             <span>connect</span>
           </div>
+
           <h2 className="text-2xl font-bold text-white sm:text-3xl">
             Let&apos;s build something
           </h2>
+
           <p className="mt-3 text-zinc-400">
-            Open for internships and collaboration. Reach out—I usually reply within a day.
+            Open for internships and collaboration.
           </p>
         </motion.div>
 
@@ -102,13 +119,16 @@ export default function Contact() {
           <button
             type="button"
             onClick={copyEmail}
-            className="group mx-auto flex w-full max-w-md items-center justify-center gap-3 rounded-2xl border-2 border-white/25 bg-white/10 px-6 py-4 text-left transition-all hover:border-white/40 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/30"
+            className="group mx-auto flex w-full max-w-md items-center justify-between gap-3 rounded-2xl border border-white/20 bg-white/10 px-4 py-4 text-left transition-all hover:border-white/40 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/30 sm:px-6 sm:py-5"
             aria-label="Copy email address"
           >
-            <Mail className="h-6 w-6 shrink-0 text-zinc-400" />
-            <span className="text-lg font-semibold text-white">
-              {mainCopied ? "Copied to clipboard" : contact.email}
-            </span>
+            <div className="flex min-w-0 items-center gap-3">
+              <Mail className="h-5 w-5 shrink-0 text-zinc-400 sm:h-6 sm:w-6" />
+             <span className="break-all text-sm font-semibold text-white sm:text-base">
+                {mainCopied ? "Copied to clipboard" : contact.email}
+              </span>
+            </div>
+
             {!mainCopied && (
               <Copy className="h-5 w-5 shrink-0 text-zinc-400 transition-colors group-hover:text-white" />
             )}
