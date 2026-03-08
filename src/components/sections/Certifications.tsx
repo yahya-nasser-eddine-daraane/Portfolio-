@@ -8,19 +8,19 @@ const certificates = [
     title: "Using Python to Access Web Data",
     org: "University of Michigan",
     image: "/certificates/michigan.png",
-    link: "#",
+    link: "https://coursera.org/share/e82284df4df2f6971ae4f772867ca615",
   },
   {
     title: "The Unix Workbench",
     org: "Johns Hopkins University",
     image: "/certificates/johns-hopkins.jpeg",
-    link: "#",
+    link: "https://coursera.org/share/9fe77d0e562386a2bab41525344807b8",
   },
   {
     title: "Introduction à la programmation orientée objet (C++)",
     org: "EPFL",
     image: "/certificates/EPFL.png",
-    link: "https://www.coursera.org/account/accomplishments/",
+    link: "https://coursera.org/share/7c16ba80d3fd7e02650e6da915a5829b",
   },
 ];
 

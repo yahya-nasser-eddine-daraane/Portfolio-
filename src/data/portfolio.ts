@@ -91,7 +91,7 @@ export const projects = [
       "Legal assistant built with a full RAG pipeline: chunking legal texts, generating embeddings, semantic retrieval in ChromaDB, and reranking with Bi-Encoder/Cross-Encoder before producing contextual answers via an LLM.",
     stack: ["Python", "FastAPI", "ChromaDB", "sentence-transformers", "RAG", "NLP"],
     image: "/projects/project-1.webp",
-    github: "https://github.com/BENMOUSSA-Youssef",
+    github: "https://github.com/Yassine-Hajib/Law_IA",
     live: "",
     highlight: "RAG pipeline (retrieval + reranking)",
   },
@@ -102,7 +102,7 @@ export const projects = [
       "Secure password manager in C++ with local encryption (AES-256) and controlled access, designed with a clean desktop interface and structured storage.",
     stack: ["C++", "Qt", "SQLCipher", "Security"],
     image: "/projects/project-2.png",
-    github: "https://github.com/BENMOUSSA-Youssef",
+    github: "https://github.com/BENMOUSSA-Youssef/KeeBox",
     live: "",
     highlight: "Secure local encryption project",
   },
@@ -113,7 +113,7 @@ export const projects = [
       "NLP classifier that categorizes documents (e.g., contracts, regulations). Includes preprocessing, TF-IDF vectorization, model training (Logistic Regression / SVM), and evaluation (accuracy, F1-score).",
     stack: ["Python", "Scikit-learn", "NLP", "TF-IDF"],
     image: "/projects/project-3.webp",
-    github: "https://github.com/BENMOUSSA-Youssef",
+    github: "https://github.com/BENMOUSSA-Youssef/AI-Document-Classifier",
     live: "",
     highlight: "ML classification + metrics",
   },
@@ -124,7 +124,7 @@ export const projects = [
       "Academic platform built with Laravel featuring role-based access, secure authentication, and automated grade calculations with a clean admin experience.",
     stack: ["Laravel", "PHP", "MySQL", "Blade"],
     image: "/projects/project-4.jpg",
-    github: "https://github.com/BENMOUSSA-Youssef",
+    github: "https://github.com/BENMOUSSA-Youssef/School-Management-System",
     live: "",
     highlight: "Full-stack Laravel platform",
   },
@@ -136,7 +136,7 @@ export const certifications = [
     issuer: "University of Michigan (Coursera)",
     date: "Jan 27, 2026",
     topic: "Python",
-    link: "#",
+    link: "https://coursera.org/share/e82284df4df2f6971ae4f772867ca615",
     image:"/certificates/michigan.png"
   },
   {
@@ -144,7 +144,7 @@ export const certifications = [
     issuer: "Johns Hopkins University (Coursera)",
     date: "Oct 24, 2025",
     topic: "Unix",
-    link: "#",
+    link: "https://coursera.org/share/9fe77d0e562386a2bab41525344807b8",
     image:"/certificates/Johns Hopkins.jpg"
   },
   {
@@ -152,7 +152,7 @@ export const certifications = [
     issuer: "EPFL (Coursera)",
     date: "Nov 11, 2025",
     topic: "C++",
-    link: "#",
+    link: "https://coursera.org/share/7c16ba80d3fd7e02650e6da915a5829b",
     image:"/certificates/EPFL.jpg"
   },
 ] as const;
