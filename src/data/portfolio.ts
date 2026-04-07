@@ -184,7 +184,7 @@ export const contact = {
   phone: "+212 632647612",
   github: "yahya-nasser-eddine-daraane",
   githubUrl: "https://github.com/yahya-nasser-eddine-daraane",
-  linkedInUrl: "https://www.linkedin.com/in/yahya-nasser-eddine-daraane/",
+  linkedInUrl: "https://www.linkedin.com/in/yahya-nasser-eddine-daraane-4ab459361/",
   linkedIn : "Yahya Nasser Eddine Daraane"
 } as const;
 
