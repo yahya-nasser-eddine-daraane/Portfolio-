@@ -1,47 +1,20 @@
-# Youssef BENMOUSSA — Portfolio 
+# Yahya Nasser Eddine Daraane - Personal Portfolio
 
-A clean, modern, high-end developer portfolio built with Next.js (App Router), TypeScript, TailwindCSS, and Framer Motion.
+My personal portfolio website built with Next.js, Framer Motion, and Tailwind CSS. Showcases my projects, skills, and background in Artificial Intelligence and Software Engineering.
 
-## Tech stack
+## Features
+- **Deep Space Glassmorphism Design:** Modern, premium aesthetic with deep dark backgrounds and cyan/purple glowing accents.
+- **Bento Box UI:** Sleek, frosted glass grids for presenting information intuitively.
+- **Immersive 3D Interactions:** Dynamic tilt animations on cards and elements using Framer Motion.
+- **Fully Responsive:** Optimized for both mobile and desktop screens.
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **TailwindCSS** 
-- **Framer Motion** (scroll and hover animations)
-- **lucide-react** (icons)
-
-## Run locally
+## Local Development
 
 ```bash
+git clone https://github.com/yahya-nasser-eddine-daraane/portfolio.git
+cd portfolio
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-## Build
-
-```bash
-npm run build
-npm start
-```
-
-## Project structure
-
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── globals.css
-│   └── projects/
-│       └── page.tsx
-├── components/
-│   ├── layout/             # Navbar, Footer
-│   ├── ui/                 # Reusable: SectionTitle, ProjectCard, SkillCard, Timeline
-│   └── sections/           # Page sections: Hero, About, Education, Skills, Projects, Certifications, Contact
-└── data/
-    └── portfolio.ts        # Content: site copy, projects, skills, certifications, contact, nav
-```
-
-
+Check out `http://localhost:3000` to see the site running locally.

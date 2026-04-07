@@ -36,32 +36,40 @@ export default function Navbar() {
 
   return (
     <motion.header
-      initial={{ y: -20, opacity: 0 }}
+      initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4 }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-surface-900/80 backdrop-blur-xl"
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="fixed top-4 left-4 right-4 z-50 flex justify-center md:top-6"
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6"
+        className="flex w-full max-w-max items-center justify-between gap-4 rounded-full border border-white/10 bg-[#020617]/50 px-4 py-2 opacity-95 shadow-xl shadow-black/20 backdrop-blur-xl"
         aria-label="Main navigation"
       >
         <Link
           href="#hero"
           onClick={() => handleNavClick("hero")}
-          className="text-sm font-semibold text-white transition-colors hover:text-zinc-300"
+          className="px-2 text-sm font-heading font-bold uppercase tracking-wider text-white transition-colors hover:text-cyan-400"
           aria-label="Go to top"
         >
-          YB
+          YND
         </Link>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        {/* Desktop Nav */}
+        <ul className="hidden items-center gap-1 sm:flex">
           {navSections.filter(s => s.id !== "hero").map(({ id, label }) => (
-            <li key={id}>
+            <li key={id} className="relative">
+              {activeId === id && (
+                <motion.div
+                  layoutId="active-pill"
+                  className="absolute inset-0 z-0 rounded-full bg-white/10"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
               <button
                 onClick={() => handleNavClick(id)}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                className={`relative z-10 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-colors ${
                   activeId === id
-                    ? "text-white"
+                    ? "text-cyan-400"
                     : "text-zinc-400 hover:text-white"
                 }`}
                 aria-current={activeId === id ? "true" : undefined}
@@ -73,21 +81,23 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 md:flex">
+        {/* Download CV */}
+        <div className="hidden sm:block pl-2 border-l border-white/10">
           <a
             href={cvPath}
             download
-            className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/15"
+            className="group flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-cyan-400 transition-all hover:bg-cyan-500/20 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]"
             aria-label="Download CV"
           >
-            <FileDown className="h-4 w-4" />
-            Download CV
+            <FileDown className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
+            CV
           </a>
         </div>
 
+        {/* Mobile Toggle */}
         <button
           type="button"
-          className="rounded-lg p-2 text-zinc-400 hover:bg-white/5 hover:text-white md:hidden"
+          className="rounded-full p-2 text-zinc-400 hover:bg-white/10 hover:text-white sm:hidden"
           onClick={() => setMobileOpen((o) => !o)}
           aria-expanded={mobileOpen}
           aria-label="Toggle menu"
@@ -99,30 +109,30 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden border-t border-white/5 bg-surface-900/95 backdrop-blur-xl md:hidden"
+            className="absolute left-4 right-4 top-[110%] overflow-hidden rounded-3xl border border-white/10 bg-[#020617]/95 p-4 shadow-2xl backdrop-blur-xl sm:hidden"
           >
-            <ul className="flex flex-col px-4 py-3">
+            <ul className="flex flex-col gap-1">
               {navSections.filter(s => s.id !== "hero").map(({ id, label }) => (
                 <li key={id}>
                   <button
                     onClick={() => handleNavClick(id)}
-                    className={`block w-full rounded-lg px-3 py-2.5 text-left text-sm font-medium ${
-                      activeId === id ? "text-white" : "text-zinc-300"
+                    className={`block w-full rounded-xl px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider transition-colors ${
+                      activeId === id ? "bg-white/10 text-cyan-400" : "text-zinc-300 hover:bg-white/5"
                     }`}
                   >
                     {label}
                   </button>
                 </li>
               ))}
-              <li className="mt-2 border-t border-white/5 pt-2">
+              <li className="mt-2 pt-2 border-t border-white/10">
                 <a
                   href={cvPath}
                   download
-                  className="flex w-full items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-3 py-2.5 text-sm font-medium text-white"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-500/20 px-4 py-3 text-sm font-bold uppercase tracking-wider text-cyan-400"
                 >
                   <FileDown className="h-4 w-4" />
                   Download CV

@@ -67,120 +67,95 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative pt-20 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20"
+      className="relative min-h-[90vh] flex items-center pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-32 lg:pb-20"
     >
       <StarsBackground />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] via-transparent to-transparent" />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-12">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col-reverse items-center justify-between gap-12 lg:flex-row lg:gap-8">
+          
           <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.45 }}
-            className="order-1 text-left"
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="flex-1 text-center lg:text-left"
           >
-            <span
-              className="mb-4 inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300"
-              aria-label="Availability"
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="inline-flex items-center gap-2 mb-6 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-400 backdrop-blur-md"
             >
+              <div className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
               {site.statusBadge}
-            </span>
+            </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.4 }}
-              className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-5xl"
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="font-heading text-5xl font-black uppercase tracking-tight text-white drop-shadow-2xl sm:text-6xl lg:text-7xl"
             >
-              {site.name}
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
+                {site.name.split(' ')[0]}
+              </span>
+              <span className="block text-4xl sm:text-5xl lg:text-5xl text-zinc-400 mt-2">
+                {site.name.split(' ').slice(1).join(' ')}
+              </span>
             </motion.h1>
 
-            <motion.p
+            <motion.h2
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.4 }}
-              className="mt-3 max-w-2xl text-lg font-medium leading-snug text-zinc-100 sm:text-xl lg:text-2xl"
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="mt-6 text-xl font-heading font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 sm:text-2xl lg:text-3xl"
             >
               AI & Software Engineering
-            </motion.p>
+            </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.4 }}
-              className="mt-4 max-w-xl text-base leading-relaxed text-zinc-400"
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="mt-6 max-w-xl text-base leading-relaxed text-zinc-400 mx-auto lg:mx-0"
             >
               {site.about}
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.4 }}
-              className="mt-8"
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
             >
-              <div className="grid grid-cols-2 gap-3 sm:hidden">
-                <Link
-                  href="#projects"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black transition-opacity hover:opacity-90"
-                  aria-label="View projects"
-                >
-                  Projects
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+              <Link
+                href="#projects"
+                className="group relative flex w-full sm:w-auto items-center justify-center gap-2 overflow-hidden rounded-xl bg-white px-8 py-4 font-bold text-black transition-transform hover:scale-105 active:scale-95"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-cyan-300 opacity-0 transition-opacity group-hover:opacity-20" />
+                View Projects
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
 
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
-                  aria-label="Contact"
-                >
-                  <Mail className="h-4 w-4" />
-                  Contact
-                </a>
-
-                <a
-                  href="/CV.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="col-span-2 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/10"
-                  aria-label="View resume"
-                >
-                  Resume
-                </a>
-              </div>
-
-              <div className="hidden sm:flex sm:flex-row sm:flex-wrap sm:gap-3">
-                <Link
-                  href="#projects"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
-                  aria-label="View projects"
-                >
-                  View Projects
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-white/10"
-                  aria-label="Contact"
-                >
-                  <Mail className="h-4 w-4" />
-                  Contact
-                </a>
-              </div>
+              <a
+                href="#contact"
+                className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-8 py-4 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95"
+              >
+                <Mail className="h-5 w-5 text-zinc-400 transition-colors group-hover:text-white" />
+                Contact Me
+              </a>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.4 }}
-              className="mt-6 flex flex-wrap gap-2"
+              transition={{ delay: 0.9, duration: 1 }}
+              className="mt-12 flex flex-wrap justify-center lg:justify-start gap-2"
             >
               {site.heroChips.map((chip) => (
                 <span
                   key={chip}
-                  className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-zinc-400"
+                  className="rounded-lg border border-purple-500/20 bg-purple-500/5 px-4 py-2 text-xs font-bold uppercase tracking-wider text-purple-300 backdrop-blur-sm transition-colors hover:bg-purple-500/10 hover:border-purple-500/40"
                 >
                   {chip}
                 </span>
@@ -189,15 +164,17 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="order-2 flex justify-center lg:justify-end"
+            initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ delay: 0.2, duration: 1, type: "spring", stiffness: 100 }}
+            className="relative flex-shrink-0"
           >
-            <div
+            <motion.div
               ref={containerRef}
-              className="relative aspect-square w-full max-w-[220px] cursor-pointer select-none sm:max-w-[260px] lg:max-w-[320px] xl:max-w-[360px]"
+              className="relative aspect-square w-[280px] sm:w-[320px] lg:w-[420px] cursor-pointer select-none group"
               style={{ perspective: "1000px" }}
+              animate={{ y: [0, -15, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
               onMouseMove={(e) => handleMove(e.clientX, e.clientY)}
               onMouseLeave={handleLeave}
               onTouchStart={(e) => {
@@ -210,54 +187,46 @@ export default function Hero() {
               }}
               onTouchEnd={handleLeave}
               onClick={handlePhotoClick}
-              onKeyDown={(e) => e.key === "Enter" && handlePhotoClick()}
-              role="button"
-              tabIndex={0}
-              aria-label="Click to reveal an AI quote"
             >
               <motion.div
-                className="relative h-full w-full overflow-hidden rounded-full"
+                className="relative h-full w-full overflow-hidden rounded-[2rem] border border-white/10 bg-[#0f172a]/50 shadow-2xl backdrop-blur-xl transition-all duration-300 group-hover:border-cyan-500/50 group-hover:shadow-[0_0_40px_rgba(6,182,212,0.2)]"
                 style={{
                   transformStyle: "preserve-3d",
-                  perspective: 1000,
                   WebkitBackfaceVisibility: "hidden",
-                  backfaceVisibility: "hidden"
                 }}
                 animate={{
                   rotateX: tilt.x,
                   rotateY: tilt.y,
                 }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
               >
-                <div
-                  className="pointer-events-none absolute -inset-1 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-40 blur-xl"
-                  style={{ transform: "translateZ(0)" }}
-                  aria-hidden
-                />
-                <div className="pointer-events-none absolute inset-0 rounded-full border-2 border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06),inset_0_1px_0_rgba(255,255,255,0.05)]" />
-                <div className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-white/20 ring-offset-2 ring-offset-surface-900" />
-
                 {!profileImgError ? (
                   <Image
                     src="/profile.jpg"
-                    alt="Youssef BENMOUSSA — click for a quote"
+                    alt="Yahya Nasser Eddine Daraane"
                     fill
                     quality={100}
-                    className="pointer-events-none rounded-full object-cover object-[center_18%]"
+                    className="pointer-events-none object-cover transition-transform duration-500 group-hover:scale-105"
                     priority
-                    sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 360px"
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 420px"
                     onError={() => setProfileImgError(true)}
-                    draggable={false}
                   />
                 ) : (
-                  <div className="absolute inset-0 flex items-center justify-center rounded-full bg-surface-700 text-zinc-400">
-                    <User className="h-20 w-20 sm:h-24 sm:w-24" aria-hidden />
+                  <div className="absolute inset-0 flex items-center justify-center text-zinc-600">
+                    <User className="h-24 w-24" />
                   </div>
                 )}
+                
+                {/* Decorative Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 via-transparent to-purple-500/20 mix-blend-overlay pointer-events-none" />
               </motion.div>
-            </div>
+            </motion.div>
+
+            {/* Background Glow */}
+            <div className="absolute -inset-10 -z-10 animate-pulse-slow rounded-[3rem] bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl opacity-50" />
           </motion.div>
 
+          {/* Quote Modal */}
           <AnimatePresence>
             {showQuote && (
               <motion.div
@@ -265,58 +234,39 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
                 className="fixed inset-0 z-50 flex items-center justify-center p-4"
               >
-                <div
-                  className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-                  onClick={() => setShowQuote(false)}
-                  aria-hidden
-                />
-
+                <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setShowQuote(false)} />
                 <motion.div
-                  role="dialog"
-                  aria-modal="true"
-                  aria-label="AI quote"
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                  transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                  className="relative z-10 w-full max-w-md"
+                  className="relative z-10 w-full max-w-lg rounded-3xl border border-white/10 bg-[#0f172a]/95 p-8 shadow-2xl backdrop-blur-xl"
                 >
-                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-surface-800 shadow-2xl shadow-black/50">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent" />
-
-                    <div className="relative flex flex-col gap-4 p-6 sm:p-8">
-                      <div className="flex items-center gap-2 text-zinc-400">
-                        <Sparkles className="h-5 w-5 shrink-0" aria-hidden />
-                        <span className="text-xs font-semibold uppercase tracking-widest">
-                          AI & beyond
-                        </span>
-                      </div>
-
-                      <blockquote className="text-lg font-medium leading-relaxed text-white sm:text-xl">
-                        &ldquo;{AI_QUOTES[quoteIndex].text}&rdquo;
-                      </blockquote>
-
-                      <cite className="not-italic text-sm text-zinc-400 before:content-['—\00a0']">
-                        {AI_QUOTES[quoteIndex].author}
-                      </cite>
-
-                      <button
-                        type="button"
-                        onClick={() => setShowQuote(false)}
-                        className="absolute right-3 top-3 rounded-lg p-2 text-zinc-400 transition-colors hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30"
-                        aria-label="Close quote"
-                      >
-                        <X className="h-5 w-5" />
-                      </button>
-                    </div>
+                  <div className="flex items-center gap-3 text-cyan-400 mb-6">
+                    <Sparkles className="h-6 w-6" />
+                    <span className="font-heading text-sm font-bold uppercase tracking-widest">
+                      AI & Beyond
+                    </span>
                   </div>
+                  <blockquote className="font-heading text-2xl font-medium leading-snug text-white">
+                    "{AI_QUOTES[quoteIndex].text}"
+                  </blockquote>
+                  <cite className="mt-6 block font-bold text-zinc-500 uppercase tracking-wider text-sm">
+                    — {AI_QUOTES[quoteIndex].author}
+                  </cite>
+                  <button
+                    onClick={() => setShowQuote(false)}
+                    className="absolute right-6 top-6 text-zinc-500 hover:text-white transition-colors"
+                    aria-label="Close quote"
+                  >
+                    <X className="h-6 w-6" />
+                  </button>
                 </motion.div>
               </motion.div>
             )}
           </AnimatePresence>
+
         </div>
       </div>
     </section>

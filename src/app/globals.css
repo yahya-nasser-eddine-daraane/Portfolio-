@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
+  --background: #020617; /* Very dark blue slate */
+  --foreground: #f8fafc; /* Crisp white-slate */
 }
 
 html {
@@ -14,46 +14,54 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
+  background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(2, 132, 199, 0.1), transparent 40%);
   font-feature-settings: "rlig" 1, "calt" 1;
+  min-height: 100vh;
 }
 
 /* Subtle selection */
 ::selection {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(56, 189, 248, 0.3);
   color: #fff;
 }
 
 /* Focus visible for accessibility */
 :focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline: 2px solid rgba(56, 189, 248, 0.5);
   outline-offset: 2px;
 }
 
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* Base custom classes for glassmorphism */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-panel:hover {
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: rgba(30, 41, 59, 0.7);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 @keyframes marquee {
-  from {
-    transform: translateX(0);
+  0% {
+    transform: translate3d(0, 0, 0);
   }
-  to {
-    transform: translateX(-50%);
+  100% {
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .animate-marquee {
   animation: marquee 15s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-  

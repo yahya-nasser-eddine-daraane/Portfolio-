@@ -1,9 +1,9 @@
 export const site = {
-  name: "Youssef BENMOUSSA",
-  headline: "AI & Software Engineering",
+  name: "Yahya Nasser Eddine Daraane",
+  headline: "Future Ingénieur en Informatique | Intelligence Artificielle & Développement Logiciel",
   about:
-    "Third-year Computer Engineering & Networks student interested in artificial intelligence and software development. I build practical projects involving NLP, semantic search, and API-based systems. Currently seeking a software or AI internship starting July 2026.",
-  heroChips: ["Python", "FastAPI", "Laravel", "RAG", "ChromaDB", "MySQL", "Git/Linux"],
+    "Étudiant ingénieur en Informatique et Réseaux à l'EMSI Marrakech, passionné par le développement logiciel et l'intelligence artificielle. Intéressé par la conception d'applications intelligentes et l'exploitation des données. Curieux, autonome et doté d'un bon esprit d'analyse ainsi que d'un sens du travail en équipe et de résolution des problèmes, je suis actuellement à la recherche d'un stage en intelligence artificielle ou en développement Full Stack à partir du 1er juillet 2026.",
+  heroChips: ["Python", "C++", "Laravel", "RAG", "LLMs", "FastAPI"],
   statusBadge: "Open for Internship — July 2026",
 } as const;
 
@@ -15,33 +15,24 @@ export const aboutFacts = [
 
 export const education = [
   {
-    school: "École Marocaine des Sciences de l'Ingénieur (EMSI)",
+    school: "École Marocaine des Sciences de l'Ingénieur (EMSI) - Marrakech",
     entries: [
       {
-        title: "Engineering Cycle – Computer Engineering & Networks",
-        period: "2025 — Present",
+        title: "Cycle d’ingénieur en Informatique et Réseaux",
+        period: "2025 — Présent",
       },
       {
-        title: "Preparatory Classes for Engineering Studies",
+        title: "Classes préparatoires",
         period: "2023 — 2025",
       },
     ],
   },
   {
-    school: "Faculté des Sciences et Techniques de Marrakech",
+    school: "Ghandi High School",
     entries: [
       {
-        title: "Math, Informatique, Physique et Chimie (MIPC)",
-        period: "2023 — 2024",
-      },
-    ],
-  },
-  {
-    school: "Rahali El Farouq High School",
-    entries: [
-      {
-        title: "Baccalauréat Science Physique",
-        period: "2021 — 2022",
+        title: "Baccalauréat en Science Physique",
+        period: "2022 — 2023",
       },
     ],
   },
@@ -49,121 +40,152 @@ export const education = [
 
 export const skillCategories = [
   {
-    title: "Programming Languages",
-    skills: ["Python", "Java", "C", "C++", "JavaScript", "TypeScript", "PHP"],
-  },
-  {
-    title: "Backend & APIs",
-    skills: ["FastAPI", "REST APIs", "Laravel"],
-  },
-  {
-    title: "AI / Data",
-    skills: [
-      "NLP",
-      "Embeddings",
-      "RAG Architecture",
-      "LLM Integration (API / Open-source)",
-      "Vector Search",
-      "Reranking (Bi-Encoder / Cross-Encoder)",
-      "TF-IDF",
-      "Scikit-learn",
-    ],
+    title: "Langages de programmation",
+    skills: ["Python", "C++", "C", "Java"],
   },
   {
     title: "Web Development",
-    skills: ["HTML", "CSS", "React", "TailwindCSS", "Node.js"],
+    skills: ["PHP", "Laravel", "HTML", "CSS"],
   },
   {
-    title: "Databases",
-    skills: ["MySQL", "Oracle", "SQLite" , "SQL Server"],
+    title: "Intelligence Artificielle",
+    skills: ["NLP", "RAG", "LLMs", "Vector Embeddings", "Semantic Search"],
   },
   {
-    title: "Tools & Systems",
-    skills: ["Git", "GitHub", "Linux"],
+    title: "API & Backend",
+    skills: ["FastAPI", "REST APIs", "Integration (OpenWeather)"],
+  },
+  {
+    title: "Bases de données",
+    skills: ["Oracle", "MySQL", "SQL Server", "SQLite"],
+  },
+  {
+    title: "Outils & Conception",
+    skills: ["Git", "Linux", "Merise", "UML"],
+  },
+  {
+    title: "Langues",
+    skills: ["Anglais (Courant)", "Français (Courant)", "Arabe (Maternelle)"],
   },
 ] as const;
 
 export const projects = [
   {
     id: "legalai",
-    title: "LegalAI (RAG Assistant)",
-    description:
-      "Legal assistant built with a full RAG pipeline: chunking legal texts, generating embeddings, semantic retrieval in ChromaDB, and reranking with Bi-Encoder/Cross-Encoder before producing contextual answers via an LLM.",
-    stack: ["Python", "FastAPI", "ChromaDB", "sentence-transformers", "RAG", "NLP"],
-    image: "/projects/project-1.webp",
-    github: "https://github.com/Yassine-Hajib/Law_IA",
+    title: "Legal AI Assistant (RAG-based)",
+    description: "Plateforme IA d'assistance juridique spécialisée dans le droit du travail marocain qui combine l'intelligence artificielle, la recherche sémantique et les textes de loi pour répondre efficacement aux questions juridiques des utilisateurs.",
+    stack: ["Python", "FastAPI", "NLP", "RAG", "LLM", "ChromaDB"],
+    image: "/projects/LawAI.png",
+    github: "https://github.com/yahya-nasser-eddine-daraane",
     live: "",
-    highlight: "RAG pipeline (retrieval + reranking)",
+    highlight: "Full RAG & NLP pipeline",
   },
   {
     id: "keebox",
-    title: "Keebox (Password Manager)",
-    description:
-      "Secure password manager in C++ with local encryption (AES-256) and controlled access, designed with a clean desktop interface and structured storage.",
-    stack: ["C++", "Qt", "SQLCipher", "Security"],
-    image: "/projects/project-2.png",
-    github: "https://github.com/BENMOUSSA-Youssef/KeeBox",
+    title: "KeeBox",
+    description: "Développement d'un gestionnaire de mots de passe sécurisé en C++ avec SQLCipher (AES-256) pour le chiffrement des données locales, offrant une gestion sécurisée des accès et une interface native multi-plateforme.",
+    stack: ["C++", "Qt", "SQLCipher"],
+    image: "/projects/keebox.png",
+    github: "https://github.com/yahya-nasser-eddine-daraane",
     live: "",
-    highlight: "Secure local encryption project",
+    highlight: "AES-256 Local Encryption",
   },
   {
-    id: "doc-classifier",
-    title: "AI Document Classifier",
-    description:
-      "NLP classifier that categorizes documents (e.g., contracts, regulations). Includes preprocessing, TF-IDF vectorization, model training (Logistic Regression / SVM), and evaluation (accuracy, F1-score).",
-    stack: ["Python", "Scikit-learn", "NLP", "TF-IDF"],
-    image: "/projects/project-3.webp",
-    github: "https://github.com/BENMOUSSA-Youssef/AI-Document-Classifier",
+    id: "cookbook",
+    title: "COOKBOOK",
+    description: "Plateforme interactive de partage de recettes. Back-end sécurisé, et web app avec assistant IA intelligent capable de suggérer automatiquement des recettes et des ingrédients adaptés.",
+    stack: ["Laravel", "PHP", "MySQL", "JavaScript", "HTML/CSS"],
+    image: "/projects/CookBook.png",
+    github: "https://github.com/yahya-nasser-eddine-daraane",
     live: "",
-    highlight: "ML classification + metrics",
+    highlight: "AI-Powered Recipe App",
   },
   {
-    id: "school-mgmt",
-    title: "School Management System (Laravel)",
-    description:
-      "Academic platform built with Laravel featuring role-based access, secure authentication, and automated grade calculations with a clean admin experience.",
-    stack: ["Laravel", "PHP", "MySQL", "Blade"],
-    image: "/projects/project-4.jpg",
-    github: "https://github.com/BENMOUSSA-Youssef/School-Management-System",
+    id: "chibichat",
+    title: "ChibiChat",
+    description: "Application de messagerie instantanée sur réseau local permettant l'échange de messages texte en temps réel, historique des conversations et assistant IA de traduction automatique pour faciliter les échanges multilingues.",
+    stack: ["Java", "SQL Server", "LLM"],
+    image: "/projects/chibichat.png",
+    github: "https://github.com/yahya-nasser-eddine-daraane",
     live: "",
-    highlight: "Full-stack Laravel platform",
+    highlight: "Real-time AI Chat",
   },
 ] as const;
 
 export const certifications = [
   {
+    title: "HTML, CSS, and Javascript for Web Developers",
+    issuer: "Johns Hopkins University (Coursera)",
+    date: "",
+    topic: "Web Development",
+    link: "",
+    image:"/certificates/johns-hopkins.jpeg"
+  },
+  {
+    title: "The Arduino Platform and C Programming",
+    issuer: "University of California, Irvine (Coursera)",
+    date: "",
+    topic: "C & Arduino",
+    link: "",
+    image:"/certificates/michigan.png"
+  },
+  {
+    title: "Interactivity with JavaScript",
+    issuer: "University of Michigan (Coursera)",
+    date: "",
+    topic: "JavaScript",
+    link: "",
+    image:"/certificates/michigan.png"
+  },
+  {
     title: "Using Python to Access Web Data",
     issuer: "University of Michigan (Coursera)",
-    date: "Jan 27, 2026",
+    date: "",
     topic: "Python",
-    link: "https://coursera.org/share/e82284df4df2f6971ae4f772867ca615",
+    link: "",
     image:"/certificates/michigan.png"
   },
   {
     title: "The Unix Workbench",
     issuer: "Johns Hopkins University (Coursera)",
-    date: "Oct 24, 2025",
+    date: "",
     topic: "Unix",
-    link: "https://coursera.org/share/9fe77d0e562386a2bab41525344807b8",
-    image:"/certificates/Johns Hopkins.jpg"
+    link: "",
+    image:"/certificates/johns-hopkins.jpeg"
+  },
+  {
+    title: "Software Eng: Software Design and Project Management",
+    issuer: "The Hong Kong University of Science and Technology",
+    date: "",
+    topic: "Software Engineering",
+    link: "",
+    image:"/certificates/EPFL.png"
   },
   {
     title: "Introduction à la programmation orientée objet (en C++)",
-    issuer: "EPFL (Coursera)",
-    date: "Nov 11, 2025",
+    issuer: "École Polytechnique Fédérale de Lausanne",
+    date: "",
     topic: "C++",
-    link: "https://coursera.org/share/7c16ba80d3fd7e02650e6da915a5829b",
-    image:"/certificates/EPFL.jpg"
+    link: "",
+    image:"/certificates/EPFL.png"
   },
+  {
+    title: "AI for Everyone",
+    issuer: "DeepLearning.AI (Coursera)",
+    date: "",
+    topic: "AI",
+    link: "",
+    image:"/certificates/michigan.png"
+  }
 ] as const;
 
 export const contact = {
-  email: "youssefbenmoussa.work@gmail.com",
-  phone: "+212 665-449333",
-  github: "BENMOUSSA-Youssef",
-  githubUrl: "https://github.com/BENMOUSSA-Youssef",
-  linkedInUrl: "https://www.linkedin.com/in/youssefbenmoussa/",
-  linkedIn : "Youssef BENMOUSSA"
+  email: "yahyadaraan@gmail.com",
+  phone: "+212 632647612",
+  github: "yahya-nasser-eddine-daraane",
+  githubUrl: "https://github.com/yahya-nasser-eddine-daraane",
+  linkedInUrl: "https://www.linkedin.com/in/yahya-nasser-eddine-daraane/",
+  linkedIn : "Yahya Nasser Eddine Daraane"
 } as const;
 
 export const navSections = [
